@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth; /* Added for smooth scrolling */
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Hide default cursor when custom cursor is active */
+  body.custom-cursor-active {
+    cursor: none;
+  }
+
+  /* Show default cursor on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    body.custom-cursor-active {
+      cursor: auto;
+    }
+  }
+}
+
+@layer components {
+  /* Container utilities */
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Card component */
+  .card {
+    @apply bg-white dark:bg-dark-800 rounded-xl shadow-lg border border-gray-200 dark:border-dark-700 p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  /* Button components */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900;
+  }
+
+  /* Animation utility classes */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8;
+  }
+
+  .animate-on-scroll.animate-in {
+    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+  }
+
+  .animate-fade-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-fade-up.animate-in {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .animate-fade-in {
+    @apply opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .animate-fade-in.animate-in {
+    @apply opacity-100;
+  }
+
+  .animate-slide-left {
+    @apply opacity-0 translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-slide-left.animate-in {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .animate-slide-right {
+    @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-slide-right.animate-in {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .animate-scale {
+    @apply opacity-0 scale-95 transition-all duration-700 ease-out;
+  }
+
+  .animate-scale.animate-in {
+    @apply opacity-100 scale-100;
+  }
+
+  .animate-rotate {
+    @apply opacity-0 rotate-12 transition-all duration-700 ease-out;
+  }
+
+  .animate-rotate.animate-in {
+    @apply opacity-100 rotate-0;
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+
+  /* Background gradients */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
+
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-600 to-accent-600;
+  }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-r from-accent-600 to-primary-600;
+  }
+
+  /* Animation utilities */
+  .animate-fade-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-fade-up.animate-in {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .animate-fade-in {
+    @apply opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .animate-fade-in.animate-in {
+    @apply opacity-100;
+  }
+
+  .animate-slide-left {
+    @apply opacity-0 translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-slide-left.animate-in {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .animate-slide-right {
+    @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .animate-slide-right.animate-in {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .animate-scale {
+    @apply opacity-0 scale-95 transition-all duration-700 ease-out;
+  }
+
+  .animate-scale.animate-in {
+    @apply opacity-100 scale-100;
+  }
+
+  .animate-rotate {
+    @apply opacity-0 rotate-12 transition-all duration-700 ease-out;
+  }
+
+  .animate-rotate.animate-in {
+    @apply opacity-100 rotate-0;
+  }
+}

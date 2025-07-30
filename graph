@@ -1,0 +1,60 @@
+flowchart TD
+  subgraph Hero
+    H1["[Gradient Title]\nBuilding Impactful Mobile Experiences with Code"]
+    Lottie["[Lottie Typing Animation]"]
+    Subhead["[Typewriter Subheading]"]
+    NeonBtn["[Neon Button]\nLet’s Connect"]
+    Device["[3D Device Mockup]"]
+    H1 --> Subhead
+    H1 --> Lottie
+    Subhead --> NeonBtn
+    H1 --> Device
+  end
+
+  subgraph About
+    Profile["[Profile Picture]"]
+    Timeline["[Timeline Card 1]"]
+    Timeline2["[Timeline Card 2]"]
+    Timeline3["[Timeline Card 3]"]
+    Profile --> Timeline
+    Timeline --> Timeline2
+    Timeline2 --> Timeline3
+  end
+
+  subgraph Projects
+    Grid["[Project Card 1]"]
+    Grid2["[Project Card 2]"]
+    Grid3["[Project Card 3]"]
+    Grid4["[Project Card 4]"]
+    Grid5["[Project Card 5]"]
+    Grid6["[Project Card 6]"]
+    Grid -. grid-cols-3 .-> Grid2
+    Grid2 -. grid-cols-3 .-> Grid3
+    Grid3 -. grid-cols-3 .-> Grid4
+    Grid4 -. grid-cols-3 .-> Grid5
+    Grid5 -. grid-cols-3 .-> Grid6
+  end
+
+  subgraph Skills
+    Radar["[Radar Chart]"]
+    Bar1["[Skill Bar 1]"]
+    Bar2["[Skill Bar 2]"]
+    Bar3["[Skill Bar 3]"]
+    Radar --> Bar1
+    Radar --> Bar2
+    Radar --> Bar3
+  end
+
+  subgraph Contact
+    Form["[Contact Form]\nName | Email | Message"]
+    Social["[Social Links]"]
+    Form --> Social
+  end
+
+  %% Comments for layout decisions
+  classDef comment fill:#fff,stroke:#fff,color:#888,font-style:italic;
+  Hero:::comment
+  About:::comment
+  Projects:::comment
+  Skills:::comment
+  Contact:::comment
